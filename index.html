@@ -15,6 +15,9 @@ text-align: center;
 background-color: rgb(207, 169, 238);
 color: rgb(65, 13, 85);
      } 
+     img{width: 500px;;
+height: 300px;
+     }
      </style>
 </head>
     <header>
@@ -22,11 +25,22 @@ color: rgb(65, 13, 85);
 <p>vou compartilhar receitas  </p>
 <header>
     <main>
-<img src="" alt="">
+<img src="gabi.jpeg" alt="porco">
     <h2>Meu primeiro post</h2>
      <p>por:gabrielly vitória </p>
      <p>boas-vindas ao meu blog!aqui vou 
         compartilhar receitas para seu dia a dia </p>
-     </main>
+    <button>😈 <span>0</span></button>
+   <button> 👿 <span>0</span></button>
+</main>
      </body>
+     <script>
+const botoes = document.querySelector ("button");
+botoes. addEventListener("click",botaoClicado);
+function botaoClicado(){
+console.log("fui clicado");
+let texto = botoes.querySelector ("span")
+texto.textContent++;
+}
+     </script>
  </html>

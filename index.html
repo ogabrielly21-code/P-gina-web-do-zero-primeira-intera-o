@@ -1,56 +1,73 @@
-<!DOCTYPE htm1>
-<htm1 lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" 
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog de comidinha</title>
-     <style> 
-     header{
-     background-color:rgb(203, 154, 236);
-     color:rgb(15, 16, 17);
-text-align: center;
-    }
-     main{
-background-color: rgb(207, 169, 238);
-color: rgb(65, 13, 85);
-     } 
-     img{width: 500px;;
-height: 300px;
-     }
-     </style>
+    <style> 
+        header {
+            background-color: rgb(203, 154, 236);
+            color: rgb(15, 16, 17);
+            text-align: center;
+        }
+        main {
+            background-color: rgb(207, 169, 238);
+            color: rgb(65, 13, 85);
+        } 
+        img {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
 </head>
+<body>
+
     <header>
-<h1>minhas receitas</h1>
-<p>vou compartilhar receitas  </p>
-<header>
+        <h1>minhas receitas</h1>
+        <p>vou compartilhar receitas</p>
+    </header>
+
     <main>
         <div>
+           
+             <img src="gabi.jpeg" alt="porco"><h2>Meu primeiro post</h2>
+            <p>por: gabrielly vitória</p>
+            <p>boas-vindas ao meu blog! aqui vou compartilhar receitas para seu dia a dia</p>
+            <button>⭐ <span>0</span></button>
+            <button>💜 <span>0</span></button>
+
+        </div>
+    </article>
+     </article>
+
+        <img src="gabi.jpeg" alt="porco"><h2>Meu primeiro post</h2>
+        <p>por: gabrielly vitória</p>
+        <p>boas-vindas ao meu blog! aqui vou compartilhar receitas para seu dia a dia</p>
+        <button>⭐ <span>0</span></button>
+        <button>💜 <span>0</span></button>
+
+    </div>
+   </main>
+   </body>
+    <script>
+        const botoes = document.querySelectorAll("button");
+        
+        botoes.forEach(function(botao) { 
+            let curtiu = false;
             
-<img src="gabi.jpeg" alt="porco">
-    <h2>Meu primeiro post</h2>
-     <p>por:gabrielly vitória </p>
-     <p>boas-vindas ao meu blog!aqui vou 
-        compartilhar receitas para seu dia a dia </p>
-    <button>⭐<span>0</span></button>
-    <button>💜<span>0</span></button>
-  </div>
-</main>
+            botao.addEventListener("click", botaoClicado);
 
-     </body>
-     <script>
-         const botoes = document.querySelectorAll("button");
-         
-         botoes.ForEach(  function(botao){ 
-             botao.addEventListener("click",botaoClicado);
-            function botaoClicado(){
-                console.log("fui clicado");
-                let texto = botoes.querySelector ("span")
-                texto.textContent++;
-     }
-
-    })
-
-
-     </script>
- </html>
+            function botaoClicado() {
+                let texto = botao.querySelector("span");
+                
+                if (!curtiu) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {  
+                    texto.textContent--;
+                    curtiu = false;
+                } 
+            }
+        });
+    </script>
+</html>

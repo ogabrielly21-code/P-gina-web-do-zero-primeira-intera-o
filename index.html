@@ -3,71 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog de comidinha</title>
-    <style> 
+    <title>Blog de Comidinha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f0fa;
+        }
+
         header {
             background-color: rgb(203, 154, 236);
             color: rgb(15, 16, 17);
             text-align: center;
+            padding: 20px 10px;
         }
+
         main {
             background-color: rgb(207, 169, 238);
             color: rgb(65, 13, 85);
-        } 
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        article {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
         img {
-            width: 500px;
-            height: 300px;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+    
+        article.destaque-brownie {
+            background-color: #c8acec; 
+            color: #f5b9f5;            
+            border: 3px solid #e9caf3;  
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+            font-family: 'Trebuchet MS', 'Georgia', sans-serif;
+            transform: scale(1.02);    
+        }
+
+        article.destaque-brownie h2 {
+            color: #e9caf3; 
+            margin-top: 10px;
+        }
+
+        .tag-especial {
+            background-color: #e8bef7;
+            color: #d5b8e7;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #e6a7ff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        article.destaque-brownie button {
+            background-color: #cb81fc;
+            color: #ca95ec;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>minhas receitas</h1>
-        <p>vou compartilhar receitas</p>
+        <h1>Minhas Receitas</h1>
+        <p>Vou compartilhar receitas para o seu dia a dia</p>
     </header>
 
     <main>
-        <div>
-           
-             <img src="gabi.jpeg" alt="porco"><h2>Meu primeiro post</h2>
-            <p>por: gabrielly vitória</p>
-            <p>boas-vindas ao meu blog! aqui vou compartilhar receitas para seu dia a dia</p>
-            <button>⭐ <span>0</span></button>
-            <button>💜 <span>0</span></button>
+        
+        <article>
+            <img src="gabi.jpeg" alt="Porco de estimação">
+            <h2>Meu Primeiro Post</h2>
+            <p><strong>Por:</strong> Gabrielly Vitória</p>
+            <p>Boas-vindas ao meu blog! Aqui vou compartilhar receitas para o seu dia a dia.</p>
+            <button>Curtir ❤️ <span>0</span></button>
+        </article>
 
-        </div>
-    </article>
-     </article>
+        
+        <article class="destaque-brownie">
+            <span class="tag-especial">⭐ Receita Especial</span>
+            <h2>Brownie Perfeito de Chocolate</h2>
+            <img src="brownie.jpeg" alt="Brownie de Chocolate">
+            <p><strong>Por:</strong> Gabrielly Vitória</p>
+            <p>Aprenda a fazer um brownie macio por dentro, com bordas crocantes e muito sabor de chocolate!</p>
+            <button>Curtir ❤️ <span>0</span></button>
+        </article>
+    </main>
 
-        <img src="gabi.jpeg" alt="porco"><h2>Meu primeiro post</h2>
-        <p>por: gabrielly vitória</p>
-        <p>boas-vindas ao meu blog! aqui vou compartilhar receitas para seu dia a dia</p>
-        <button>⭐ <span>0</span></button>
-        <button>💜 <span>0</span></button>
-
-    </div>
-   </main>
-   </body>
     <script>
         const botoes = document.querySelectorAll("button");
-        
-        botoes.forEach(function(botao) { 
+       
+        botoes.forEach(function(botao) {
             let curtiu = false;
-            
-            botao.addEventListener("click", botaoClicado);
-
-            function botaoClicado() {
+           
+            botao.addEventListener("click", function() {
                 let texto = botao.querySelector("span");
-                
+               
                 if (!curtiu) {
-                    texto.textContent++;
+                    texto.textContent = parseInt(texto.textContent) + 1;
                     curtiu = true;
                 } else {  
-                    texto.textContent--;
+                    texto.textContent = parseInt(texto.textContent) - 1;
                     curtiu = false;
-                } 
-            }
+                }
+            });
         });
     </script>
+</body>
 </html>

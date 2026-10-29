@@ -1,3 +1,6 @@
+Aqui está o código completo com os **3 posts** incluídos (Brigadeiro, Lasanha e Torta de Frango completa):
+
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,24 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Comidinha</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #faf5ff;
+            color: #3b0764;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
         header {
-            background-color: #8b5cf6;
+            width: 100%;
+            background-color: #7c3aed;
             color: #ffffff;
             text-align: center;
-            padding: 20px 10px;
+            padding: 30px 15px;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
         }
 
         main {
-            background-color: #f3e8ff;
-            color: #3b0764;
-            padding: 30px 20px;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,60 +55,92 @@
         article {
             background-color: #ffffff;
             color: #3b0764;
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 24px;
             width: 100%;
-            max-width: 500px;
-            box-sizing: border-box;
-            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 4px 14px rgba(139, 92, 246, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        article h2 {
+            margin: 12px 0 6px 0;
+            color: #581c87;
+        }
+
+        .autor {
+            font-size: 0.9rem;
+            color: #6b21a8;
+            margin-bottom: 15px;
         }
 
         img {
             width: 100%;
-            height: 280px;
+            height: 260px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 12px;
+            margin-bottom: 15px;
         }
 
-    
-        article.destaque-brownie {
-            background-color: #e9d5ff; 
-            color: #3b0764;            
-            border: 3px solid #c084fc;  
-            box-shadow: 0 8px 18px rgba(124, 58, 237, 0.2);
-            font-family: 'Trebuchet MS', 'Georgia', sans-serif;
-            transform: scale(1.02);    
-        }
-
-        article.destaque-brownie h2 {
-            color: #581c87; 
+        .receita-conteudo {
+            text-align: left;
+            width: 100%;
+            line-height: 1.6;
             margin-top: 10px;
         }
 
+        .receita-conteudo h3 {
+            color: #6b21a8;
+            margin: 15px 0 5px 0;
+            font-size: 1.05rem;
+        }
+
+        .receita-conteudo ul, .receita-conteudo ol {
+            padding-left: 20px;
+            margin: 5px 0 15px 0;
+        }
+
+        article.destaque {
+            background-color: #f3e8ff;
+            border: 2px solid #c084fc;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+        }
+
         .tag-especial {
-            background-color: #7e22ce;
+            background-color: #9333ea;
             color: #ffffff;
             font-weight: bold;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
-            display: inline-block;
         }
 
         button {
             cursor: pointer;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 6px;
+            border-radius: 20px;
             background-color: #8b5cf6;
             color: #ffffff;
             font-weight: bold;
-            margin-top: 10px;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            transition: background-color 0.2s, transform 0.1s;
         }
 
-        article.destaque-brownie button {
+        button:hover {
+            background-color: #7c3aed;
+            transform: scale(1.03);
+        }
+
+        article.destaque button {
             background-color: #6b21a8;
-            color: #ffffff;
+        }
+
+        article.destaque button:hover {
+            background-color: #581c87;
         }
     </style>
 </head>
@@ -98,32 +153,99 @@
 
     <main>
         
+        
         <article>
-            <img src="gabi.jpeg" alt="Porco de estimação">
-            <h2>Meu Primeiro Post</h2>
-            <p><strong>Por:</strong> Gabrielly Vitória</p>
-            <p>Boas-vindas ao meu blog! Aqui vou compartilhar receitas para o seu dia a dia.</p>
+            <img src="gabi.jpeg" alt="Brigadeiro">
+            <h2>Brigadeiro Tradicional</h2>
+            <p class="autor"><strong>Por:</strong> Gabrielly Vitória</p>
+            
+            <div class="receita-conteudo">
+                <p>Boas-vindas ao meu blog! Hoje vou ensinar como fazer um delicioso brigadeiro fácil e rápido.</p>
+
+                <h3>Ingredientes</h3>
+                <ul>
+                    <li>1 lata de leite condensado (395g)</li>
+                    <li>1 colher (sopa) de manteiga</li>
+                    <li>3 colheres (sopa) de chocolate em pó</li>
+                    <li>Granulado a gosto</li>
+                </ul>
+
+                <h3>Modo de Preparo</h3>
+                <ol>
+                    <li><strong>Cozinhe:</strong> Em uma panela, misture o leite condensado, a manteiga e o chocolate em pó. Leve ao fogo baixo, mexendo sempre, até soltar totalmente do fundo da panela.</li>
+                    <li><strong>Esfrie:</strong> Despeje a mistura em um prato untado com manteiga e deixe esfriar por completo.</li>
+                    <li><strong>Enrole:</strong> Unte as mãos com manteiga, faça pequenas bolinhas, passe no granulado e coloque em forminhas.</li>
+                </ol>
+            </div>
+
             <button>Curtir ❤️ <span>0</span></button>
         </article>
 
         
-        <article class="destaque-brownie">
+        <article class="destaque">
             <span class="tag-especial">⭐ Receita Especial</span>
-            <h2>lasanha de carne com queijo</h2>
-            <img src="lasanha.jpeg" alt="Brownie de Chocolate">
-            <p><strong>Por:</strong> Gabrielly Vitória</p>
-            <p>Aprenda a fazer uma lasanha gostosa e saborosa, com muito recheio e muito queijo!
-                para essa receita vamos precisar de
-                1 carne moida 
-                2 molho de tomate 
-                3 masa de lasanha 
-                4 queijo e presunto 
+            <h2>Lasanha de Carne com Queijo</h2>
+            <img src="lasanha.jpg" alt="Lasanha de carne com queijo">
+            <p class="autor"><strong>Por:</strong> Gabrielly Vitória</p>
 
-                modo de preparo:em uma panela vamos colocar tempero você pode usar o de sua preferencia 
-                com o temperos já refogados adicione a carne 
-            </p>
+            <div class="receita-conteudo">
+                <p>Hoje vou fazer uma lasanha super recheada, venha fazer comigo!</p>
+
+                <h3>Ingredientes</h3>
+                <ul>
+                    <li>500g de carne moída</li>
+                    <li>2 sachês de molho de tomate (600g)</li>
+                    <li>2 colheres (sopa) de manteiga e 2 de farinha de trigo</li>
+                    <li>500 ml de leite</li>
+                    <li>500g de massa para lasanha (direto ao forno)</li>
+                    <li>300g de presunto e 300g de muçarela</li>
+                    <li>Alho, cebola, sal, noz-moscada e parmesão a gosto</li>
+                </ul>
+
+                <h3>Modo de Preparo</h3>
+                <ol>
+                    <li><strong>Molho Bolonhesa:</strong> Refogue alho, cebola e a carne. Adicione o molho de tomate, tempere e cozinhe por 10 minutos.</li>
+                    <li><strong>Molho Branco:</strong> Derreta a manteiga, misture a farinha por 1 minuto, adicione o leite aos poucos mexendo até engrossar e tempere com sal e noz-moscada.</li>
+                    <li><strong>Montagem:</strong> Em uma travessa, intercale: molho bolonhesa, massa, presunto, muçarela e molho branco.</li>
+                    <li><strong>Asse:</strong> Cubra com parmesão e papel-alumínio. Asse a 180°C por 20 minutos, retire o alumínio e deixe dourar por mais 10 minutos.</li>
+                </ol>
+            </div>
+
             <button>Curtir ❤️ <span>0</span></button>
         </article>
+
+        
+        <article class="destaque">
+            <span class="tag-especial">⭐ Receita Especial</span>
+            <h2>Torta de Frango de Liquidificador</h2>
+            <img src="torta de frango j.pg" alt="Torta de frango">
+            <p class="autor"><strong>Por:</strong> Gabrielly Vitória</p>
+
+            <div class="receita-conteudo">
+                <p>Hoje vou ensinar uma receita super prática de torta salgada para o lanche da tarde!</p>
+
+                <h3>Ingredientes</h3>
+                <ul>
+                    <li>500g de peito de frango desfiado e temperado</li>
+                    <li>3 ovos</li>
+                    <li>2 xícaras de leite</li>
+                    <li>1/2 xícara de óleo</li>
+                    <li>2 xícaras de farinha de trigo</li>
+                    <li>1 colher (sopa) de fermento em pó</li>
+                    <li>50g de queijo ralado e sal a gosto</li>
+                </ul>
+
+                <h3>Modo de Preparo</h3>
+                <ol>
+                    <li><strong>Massa:</strong> Batam no liquidificador os ovos, o leite, o óleo, a farinha, o sal e o queijo ralado. Por último, misture o fermento delicadamente.</li>
+                    <li><strong>Montagem:</strong> Despeje metade da massa em uma forma untada, adicione o recheio de frango desfiado e cubra com o restante da massa.</li>
+                    <li><strong>Asse:</strong> Leve ao forno pré-aquecido a 180°C por cerca de 40 minutos ou até dourar.</li>
+                </ol>
+            </div>
+
+            <button>Curtir ❤️ <span>0</span></button>
+        </article>
+
     </main>
 
     <script>
@@ -147,3 +269,9 @@
     </script>
 </body>
 </html>
+
+<article class="destaque">
+    <span class="tag-especial">⭐ Receita Especial</span>
+    <h2>bombom aberto</h2>
+    <img src="torta de frango j.pg" alt="Torta de frango">
+    <p class="autor"><strong>Por:</strong> Gabrielly Vitória</p>

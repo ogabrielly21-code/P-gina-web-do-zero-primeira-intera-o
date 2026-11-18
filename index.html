@@ -19,6 +19,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -28,6 +29,7 @@
             text-align: center;
             padding: 30px 15px;
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header h1 {
@@ -60,17 +62,20 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         article h2 {
             margin: 12px 0 6px 0;
             color: #581c87;
+            transition: color 0.3s;
         }
 
         .autor {
             font-size: 0.9rem;
             color: #6b21a8;
             margin-bottom: 15px;
+            transition: color 0.3s;
         }
 
         img {
@@ -92,6 +97,7 @@
             color: #6b21a8;
             margin: 15px 0 5px 0;
             font-size: 1.05rem;
+            transition: color 0.3s;
         }
 
         .receita-conteudo ul, .receita-conteudo ol {
@@ -114,7 +120,7 @@
             font-size: 0.85rem;
         }
 
-        button {
+        article button {
             cursor: pointer;
             padding: 10px 20px;
             border: none;
@@ -127,7 +133,7 @@
             transition: background-color 0.2s, transform 0.1s;
         }
 
-        button:hover {
+        article button:hover {
             background-color: #7c3aed;
             transform: scale(1.03);
         }
@@ -138,6 +144,86 @@
 
         article.destaque button:hover {
             background-color: #581c87;
+        }
+
+        /* Estilos do Modo Escuro na Página */
+        body.dark-mode {
+            background-color: #13091f;
+            color: #f3e8ff;
+        }
+
+        body.dark-mode header {
+            background-color: #3b0764;
+        }
+
+        body.dark-mode article {
+            background-color: #1e102e;
+            color: #f3e8ff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+        }
+
+        body.dark-mode article.destaque {
+            background-color: #28153d;
+            border-color: #7e22ce;
+        }
+
+        body.dark-mode article h2,
+        body.dark-mode .receita-conteudo h3 {
+            color: #d8b4fe;
+        }
+
+        body.dark-mode .autor {
+            color: #c084fc;
+        }
+
+        /* Botão Circular Flutuante de Tema (Roxo com Lua e Sol) */
+        #btn-tema {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: #7c3aed;
+            border: 2px solid #581c87;
+            font-size: 1.5rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+            transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+            z-index: 1000;
+        }
+
+        #btn-tema:hover {
+            background-color: #6d28d9;
+            transform: scale(1.06);
+        }
+
+        #btn-tema .icone-sol {
+            display: none;
+        }
+
+        body.dark-mode #btn-tema {
+            background-color: #581c87;
+            border-color: #c084fc;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+        }
+
+        body.dark-mode #btn-tema:hover {
+            background-color: #6b21a8;
+        }
+
+        body.dark-mode #btn-tema .icone-lua {
+            display: none;
+        }
+
+        body.dark-mode #btn-tema .icone-sol {
+            display: inline;
         }
     </style>
 </head>
@@ -274,73 +360,80 @@
 
         <article class="destaque">
             <span class="tag-especial">⭐ Receita Especial</span>
-            <h2>receita de macarrão comcarne moida </h2>
+            <h2>Receita de Macarrão com Carne Moída</h2>
             <img src="lasanha.jpeg" alt="macarrão com carne moída">
             <p class="autor"><strong>Por:</strong> Gabrielly Vitória</p>
 
             <div class="receita-conteudo">
-                <p>Hoje vou ensinar a vazer um macarrão  irresistível e super fácil de fazer: macarrão com carne moída!</p>
+                <p>Hoje vou ensinar a fazer um macarrão irresistível e super fácil de fazer: macarrão com carne moída!</p>
 
                 <h3>Ingredientes</h3>
                 <ul>
-                   
-                   <li> Para o molho de carne moída</li>
-                   <li> 500g de carne moída (patinho, acém ou alcatra são boas opções)</li>
-                   <li> 1 cebola média picadinha</li>
-                   <li>2 dentes de alho amassados ou picados</li>
-                   <li> 1 fio de azeite ou óleo</li>
-                   <li>1 sachê ou lata de molho de tomate pronto (aprox. 340g)</li>
-                   <li>2 colheres (sopa) de extrato de tomate (para dar cor e sabor mais intenso)</li>
-                   <li>1/2 xícara de água (ou o quanto baste para o molho)</li>
-                   <li>Sal e pimenta-do-reino a gosto</li>
-                   <li> 1 colher (café) de açúcar (opcional, para tirar a acidez do tomate)</li>
-                   <li>Cheiro-verde (salsinha e cebolinha) picado a gosto</li>
-                   <li> Orégano a gosto. </li>
-                   <li> 80g a 100g de macarrão (espaguete, penne ou de sua preferência)</li>
-                
+                    <li>Para o molho de carne moída:</li>
+                    <li>500g de carne moída (patinho, acém ou alcatra são boas opções)</li>
+                    <li>1 cebola média picadinha</li>
+                    <li>2 dentes de alho amassados ou picados</li>
+                    <li>1 fio de azeite ou óleo</li>
+                    <li>1 sachê ou lata de molho de tomate pronto (aprox. 340g)</li>
+                    <li>2 colheres (sopa) de extrato de tomate (para dar cor e sabor mais intenso)</li>
+                    <li>1/2 xícara de água (ou o quanto baste para o molho)</li>
+                    <li>Sal e pimenta-do-reino a gosto</li>
+                    <li>1 colher (café) de açúcar (opcional, para tirar a acidez do tomate)</li>
+                    <li>Cheiro-verde (salsinha e cebolinha) picado a gosto</li>
+                    <li>Orégano a gosto</li>
+                    <li>80g a 100g de macarrão (espaguete, penne ou de sua preferência)</li>
                 </ul>
 
                 <h3>Modo de Preparo</h3>
                 <ol>
-                    <li><strong>macarrão:</strong>  Em uma panela pequena, ferva água com uma pitada de sal. Adicione o macarrão e cozinhe pelo tempo indicado na embalagem. Reserve 2 colheres (sopa) da água do cozimento e escorra o restante.</li>
-                    <li><strong>molho:</strong> Refogue os temperos: Em uma frigideira ou panela pequena, aqueça o azeite em fogo médio e doure a cebola e o alho.
-                    Cozinhe a carne: Adicione a carne moída, temperando com sal e pimenta-do-reino. Refogue mexendo bem com uma colher para soltar a carne até que perca a cor rosada.
-                    Prepare o molho: Despeje o molho de tomate e as 2 colheres da água do cozimento reservada. Cozinhe em fogo baixo por cerca de 3 a 5 minutos para encorpar..</li>
-                    <li><strong>Montagem:</strong> Misture e sirva: Adicione o macarrão escorrido diretamente na panela com a carne, misture bem para envolver a massa no molho e finalize com cheiro-verde e queijo ralado.</ol>
+                    <li><strong>Macarrão:</strong> Em uma panela pequena, ferva água com uma pitada de sal. Adicione o macarrão e cozinhe pelo tempo indicado na embalagem. Reserve 2 colheres (sopa) da água do cozimento e escorra o restante.</li>
+                    <li><strong>Molho:</strong> Refogue os temperos: Em uma frigideira ou panela pequena, aqueça o azeite em fogo médio e doure a cebola e o alho. Cozinhe a carne: Adicione a carne moída, temperando com sal e pimenta-do-reino. Refogue mexendo bem com uma colher para soltar a carne até que perca a cor rosada. Prepare o molho: Despeje o molho de tomate e as 2 colheres da água do cozimento reservada. Cozinhe em fogo baixo por cerca de 3 a 5 minutos para encorpar.</li>
+                    <li><strong>Montagem:</strong> Misture e sirva: Adicione o macarrão escorrido diretamente na panela com a carne, misture bem para envolver a massa no molho e finalize com cheiro-verde e queijo ralado.</li>
+                </ol>
             </div>
 
             <button>Curtir ❤️ <span>0</span></button>
         </article>
+        
         <article class="destaque">
             <span class="tag-especial">⭐ Receita Especial</span>
-            <h2>receita de macarrão comcarne moida </h2>
-            <img src="lasanha.jpeg" alt="macarrão com carne moída">
+            <h2>Receita de Batata Frita Crocante</h2>
+            <img src="batata frita.jpg" alt="Porção de batata frita crocante">
             <p class="autor"><strong>Por:</strong> Gabrielly Vitória</p>
 
             <div class="receita-conteudo">
-                <p>Hoje vou ensinar a vazer uma batata frita irresistível e super fácil de fazer: macarrão com carne moída!</p>
+                <p>Hoje vou ensinar a fazer uma batata frita irresistível, sequinha e super fácil de preparar!</p>
 
-         <h3>Ingredientes</h3>
-        </ul>
+                <h3>Ingredientes</h3>
+                <ul>
+                    <li>3 a 4 batatas médias (de preferência do tipo Asterix)</li>
+                    <li>Óleo vegetal para fritar (o suficiente para cobrir as batatas)</li>
+                    <li>Sal a gosto</li>
+                </ul>
     
-        <li>3 a 4 batatas médias (de preferência do tipo Asterix)</li>
-        <li>Óleo vegetal para fritar (suficiente para cobrir as batatas)</li>
-        <li>>Sal a gosto.</li>
-    
-    </ul>
-    
-    <h3>modo de preparo</h3>
-    <ol>
-    
-    
-    
-    
-        </main>
+                <h3>Modo de Preparo</h3>
+                <ol>
+                    <li>Descasque as batatas e corte-as em palitos de tamanho parecido para fritarem por igual.</li>
+                    <li>Lave os palitos em água corrente para tirar o excesso de amido e seque-os bem com um pano limpo ou papel-toalha.</li>
+                    <li>Aqueça o óleo em uma panela funda em fogo médio-alto.</li>
+                    <li>Frite as batatas aos poucos (sem encher demais a panela) até ficarem bem douradas e crocantes.</li>
+                    <li>Retire com uma escumadeira, escorra em papel-toalha e tempere com sal logo em seguida.</li>
+                </ol>
+            </div>
+
+            <button>Curtir ❤️ <span>0</span></button>
+        </article>
+    </main>
+
+    <button id="btn-tema" aria-label="Alternar tema claro e escuro">
+        <span class="icone-lua">🌙</span>
+        <span class="icone-sol">☀️</span>
+    </button>
 
     <script>
-        const botoes = document.querySelectorAll("button");
+        const botoesCurtir = document.querySelectorAll("article button");
        
-        botoes.forEach(function(botao) {
+        botoesCurtir.forEach(function(botao) {
             let curtiu = false;
            
             botao.addEventListener("click", function() {
@@ -354,6 +447,22 @@
                     curtiu = false;
                 }
             });
+        });
+
+        const btnTema = document.getElementById("btn-tema");
+
+        if (localStorage.getItem("tema") === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+
+        btnTema.addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("tema", "dark");
+            } else {
+                localStorage.setItem("tema", "light");
+            }
         });
     </script>
 </body>
